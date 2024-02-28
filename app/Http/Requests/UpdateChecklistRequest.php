@@ -7,7 +7,7 @@ use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Validation\ValidationException;
 
-class StoreChecklistRequest extends FormRequest
+class UpdateChecklistRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,10 +25,10 @@ class StoreChecklistRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => 'required|string',
+            'title' => 'string',
             'content' => 'string|nullable',
-            'checked' => 'required|boolean',
-            'day' => 'required|date'
+            'checked' => 'boolean',
+            'day' => 'date'
         ];
     }
 

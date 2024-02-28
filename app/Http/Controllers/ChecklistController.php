@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreChecklistRequest;
+use App\Http\Requests\UpdateChecklistRequest;
 use App\Http\Responses\ApiResponse;
 use App\Models\Checklist;
 use Illuminate\Http\JsonResponse;
@@ -42,7 +43,7 @@ class ChecklistController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Checklist $checklist, StoreChecklistRequest $request): JsonResponse
+    public function update(Checklist $checklist, UpdateChecklistRequest $request): JsonResponse
     {
         $data = $request->validated();
 
